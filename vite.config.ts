@@ -15,9 +15,8 @@ export default defineConfig(() => {
       }),
       react(),
       webfontDownload([
-        'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap',
       ]),
-
       viteCompression({
         algorithm: 'brotliCompress',
         ext: '.brotli',

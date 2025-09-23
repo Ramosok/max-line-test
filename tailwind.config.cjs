@@ -6,6 +6,10 @@ module.exports = {
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
     },
+    backgroundImage: {
+      MAIN_BG: 'url(/src/shared/assets/main-bg.png)',
+      FLAME_BG: 'url(/src/shared/assets/flame.gif)',
+    },
     colors: {
       'primary-blue': 'var(--primary-blue)',
       green: 'var(--success-green)',
@@ -15,6 +19,8 @@ module.exports = {
       'grey-light': 'var(--grey-light)',
       yellow: 'var(--yellow)',
       white: 'var(--white)',
+      black_07: 'var(--black_07)',
+      'grey-medium': 'var(--grey-medium)',
     },
     extend: {
       fontSize: {},
