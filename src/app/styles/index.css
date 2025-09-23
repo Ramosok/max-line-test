@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('./fonts/MTS-Sans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('./fonts/MTS-Sans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('./fonts/MTS-Sans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --primary-blue: #bbc6f2;
+  --success-green: #5ab828;
+  --success-light: #4bd700;
+  --success-muted: #4da41e;
+  --error-red: #f91717;
+  --yellow: #fff500;
+  --white: #ffffff;
+  --grey-light: #e8eaf0;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: none;
+  }
+
+  .customScrollbar {
+    scrollbar-width: thin;
+  }
+}
+
+.ov-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем дефолтные стили инпутов */
+input {
+  border: none;
+  padding: 0;
+  outline: none;
+
+  &::placeholder {
+    font-weight: 400;
+  }
+}
+
+/* При автокомплите инпутов сохраняет исходные цвета */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+input[type='password']:-webkit-autofill:focus {
+  color: var(--text-secondary) !important;
+  -webkit-text-fill-color: var(--text-secondary) !important;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  -webkit-overflow-scrolling: touch;
+  font-family: 'customFont', 'Inter', sans-serif;
+  color: var(--text-primary);
+  height: 100%;
+  font-feature-settings:
+    'liga' on,
+    'salt' on;
+}
+
+body,
+#root {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  background-color: var(--zinc-950);
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Стилизация для браузеров на основе WebKit (Chrome, Safari) */
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  background-color: var(--zinc-300);
+  mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E")
+    no-repeat center;
+  mask-size: cover;
+  cursor: pointer;
+  transform: translate(12px, 2px);
+}
+
+/* Стилизация для Firefox */
+input[type='search']::-moz-search-cancel-button {
+  -moz-appearance: none;
+  height: 28px;
+  width: 28px;
+  background-color: var(--zinc-300);
+  mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E")
+    no-repeat center;
+  mask-size: cover;
+  cursor: pointer;
+  transform: translate(12px, 2px);
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

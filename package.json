@@ -1,0 +1,92 @@
+{
+  "name": "max-line-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 5174",
+    "build": "npm run build:app",
+    "build:app": "npm install && tsc && vite build && npx tsc --project ./tsconfig.sw.json",
+    "preview": "vite preview --host",
+    "lint": "eslint . --ignore-pattern 'src/libs/react-easyrocket/**' --fix",
+    "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --ignore-pattern 'src/libs/react-easyrocket/**' --fix"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "~5.66.0",
+    "axios": "~1.9.0",
+    "clsx": "~2.1.1",
+    "libphonenumber-js": "^1.12.6",
+    "react": "~18.3.1",
+    "react-dom": "~18.3.1",
+    "react-hook-form": "~7.54.2",
+    "react-router-dom": "^7.6.1",
+    "yup": "~1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "~9.17.0",
+    "@hookform/resolvers": "~4.0.0",
+    "@tanstack/react-query-devtools": "~5.66.0",
+    "@types/react": "~18.3.18",
+    "@types/react-dom": "~18.3.5",
+    "@typescript-eslint/eslint-plugin": "~7.14.1",
+    "@typescript-eslint/parser": "~7.14.1",
+    "@vitejs/plugin-react": "~4.3.4",
+    "autoprefixer": "~10.4.20",
+    "eslint": "~8.57.0",
+    "eslint-config-airbnb": "~19.0.4",
+    "eslint-config-prettier": "~9.1.2",
+    "eslint-import-resolver-typescript": "~3.8.0",
+    "eslint-plugin-import": "~2.31.0",
+    "eslint-plugin-optimize-regex": "~1.2.1",
+    "eslint-plugin-prettier": "~5.2.3",
+    "eslint-plugin-react": "~7.37.4",
+    "eslint-plugin-react-hooks": "~4.6.2",
+    "eslint-plugin-react-refresh": "~0.4.19",
+    "globals": "~15.15.0",
+    "lint-staged": "~15.2.7",
+    "postcss": "~8.5.2",
+    "prettier": "~3.5.1",
+    "prettier-plugin-tailwindcss": "~0.6.11",
+    "sharp": "~0.33.5",
+    "tailwindcss": "~3.4.17",
+    "typescript": "~5.6.2",
+    "vite": "~6.3.5",
+    "vite-plugin-compression": "~0.5.1",
+    "vite-plugin-image-optimizer": "~1.1.8",
+    "vite-plugin-preload": "~0.4.2",
+    "vite-plugin-purgecss": "~0.2.12",
+    "vite-plugin-webfont-dl": "~3.10.4",
+    "vite-tsconfig-paths": "~5.1.4"
+  },
+  "npmpackagejsonlint": {
+    "rules": {
+      "no-repeated-dependencies": "error",
+      "no-archive-dependencies": "error",
+      "prefer-absolute-version-dependencies": "error",
+      "prefer-alphabetical-dependencies": "error",
+      "no-archive-devDependencies": "error",
+      "prefer-absolute-version-devDependencies": "error",
+      "prefer-alphabetical-devDependencies": "error",
+      "no-duplicate-properties": "error"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "!src/libs/react-easyrocket/**/*.{js,ts,tsx}": []
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

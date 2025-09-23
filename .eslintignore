@@ -1,0 +1,5 @@
+node_modules/
+dist/
+src/libs/react-easyrocket/
+public/mirrors.js
+sw/mirrors.ts
