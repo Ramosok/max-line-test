@@ -2,13 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pages: write
       id-token: write
 
@@ -28,14 +28,27 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify build
+        run: |
+          echo "=== Checking dist folder ==="
+          ls -la dist/
+          echo "=== Checking index.html ==="
+          if [ -f "dist/index.html" ]; then
+            echo "✅ index.html exists"
+            echo "=== Script tags in index.html ==="
+            grep -o '<script[^>]*src="[^"]*"[^>]*>' dist/index.html || echo "No script tags found"
+          else
+            echo "❌ index.html missing"
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: './dist'
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
