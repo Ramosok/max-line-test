@@ -50,6 +50,7 @@ export default defineConfig(() => {
       }),
       tsconfigPaths(),
     ],
+    base: 'max-line-text',
     rollupOptions: {
       treeshake: true,
     },
