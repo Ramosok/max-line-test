@@ -50,8 +50,10 @@ export const Form: FC = () => {
   };
 
   return (
-    <div className="flex h-[45vh] w-full flex-col items-center justify-center self-end rounded-t-3xl bg-black_07 p-[50px] 768:h-full 768:w-[400px] 768:rounded-none 1024:w-[480px] 1024:p-[100px] 1280:w-[580px]">
-      <h2 className="mb-4 w-full text-[22px] font-medium text-white">Регистрация</h2>
+    <article className="bg-purple-darkest z-[1] flex h-[45vh] w-full flex-col items-center justify-center self-end rounded-t-3xl p-[50px] contain-layout contain-paint 768:h-full 768:w-[400px] 768:rounded-none 768:bg-black_07 1024:w-[480px] 1024:p-[100px] 1280:w-[580px]">
+      <h2 className="mb-4 mt-0 w-full text-[22px] font-medium text-white 768:mt-[86px]">
+        Регистрация
+      </h2>
       <form autoComplete="off" onSubmit={handleSubmit(handleSubmitForm)}>
         <InputPhone
           disabled={isPending}
@@ -111,6 +113,6 @@ export const Form: FC = () => {
           регистрация
         </Button>
       </form>
-    </div>
+    </article>
   );
 };

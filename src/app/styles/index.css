@@ -25,6 +25,7 @@
 
 :root {
   --primary-blue: #bbc6f2;
+  --azure: #00bdfd;
   --success-green: #5ab828;
   --success-light: #4bd700;
   --success-muted: #4da41e;
@@ -34,6 +35,7 @@
   --grey-light: #f1f3f6;
   --grey-medium: #777b8b;
   --black_07: rgba(0, 0, 0, 0.7);
+  --purple-darkest: #0f0219;
 }
 
 /* Указываем box sizing */
