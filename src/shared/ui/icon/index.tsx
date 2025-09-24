@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import spriteUrl from './sprites.svg';
 
-type IconName = 'eye-usvisible' | 'eye-visible';
+type IconName = 'eye-usvisible' | 'eye-visible' | 'flag-by';
 
 export interface IconProps {
   icon: IconName;

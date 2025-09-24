@@ -15,8 +15,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={clsx(
+          !disabled && 'over:bg-green-light active:bg-green-muted',
           className,
-          'rounded-md bg-green p-[11px] text-[13px] font-medium uppercase text-white hover:bg-green-light active:bg-green-muted',
+          'h w-full rounded-md bg-green p-3.5 text-sm font-medium uppercase leading-4 text-white disabled:cursor-not-allowed disabled:opacity-50',
         )}
         {...props}
         disabled={disabled}>

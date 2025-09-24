@@ -16,8 +16,6 @@ export const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxP
       labelClassName,
       error = false,
       disabled = false,
-      checked,
-      onChange,
       ...restProps
     } = props;
 
@@ -27,15 +25,13 @@ export const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxP
       <div className={clsx('flex flex-col', containerClassName)}>
         <label
           className={clsx(
-            'inline-flex cursor-pointer items-start gap-3',
+            'inline-flex cursor-pointer items-center',
             disabled && 'cursor-not-allowed opacity-60',
           )}>
           <input
             name="checkbox"
             ref={ref}
             type="checkbox"
-            checked={checked}
-            onChange={onChange}
             disabled={disabled}
             className="absolute h-0 w-0 opacity-0"
             {...restProps}
@@ -44,15 +40,13 @@ export const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxP
           <span
             className={clsx(
               'relative inline-flex items-center justify-center',
-              'h-[18px] w-[18px] rounded-[4px] border transition-all duration-200',
+              'mr-2 h-[18px] w-[18px] rounded-[4px] border transition-all duration-200',
               'mt-0.5 flex-shrink-0',
-              checked ? 'border-[#5AB828] bg-[#5AB828]' : 'border-[#E8EAF0] bg-white',
+              restProps.checked ? 'border-[#5AB828] bg-[#5AB828]' : 'border-[#E8EAF0] bg-white',
               isError && 'border-red-500',
-              disabled && 'cursor-not-allowed opacity-60',
-              !disabled && !isError && 'hover:border-[#5AB828]',
               className,
             )}>
-            {checked && (
+            {restProps.checked && (
               <svg
                 width="10"
                 height="8"
@@ -62,9 +56,9 @@ export const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxP
                 <path
                   d="M1 4L4 7L9 1"
                   stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             )}
@@ -72,7 +66,7 @@ export const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxP
           {children && (
             <span
               className={clsx(
-                'text-gray-700 select-none text-sm',
+                'select-none text-[11px] leading-[14px] text-primary-blue',
                 disabled && 'opacity-60',
                 labelClassName,
               )}>
