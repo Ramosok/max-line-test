@@ -12,7 +12,6 @@ jobs:
       pages: write
       id-token: write
 
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -40,8 +39,8 @@ jobs:
           echo "=== Checking index.html ==="
           if [ -f "dist/index.html" ]; then
             echo "✅ index.html exists"
-            echo "=== Script tags in index.html ==="
-            grep -o '<script[^>]*src="[^"]*"[^>]*>' dist/index.html || echo "No script tags found"
+            echo "=== Content of index.html (first 10 lines) ==="
+            head -20 dist/index.html
           else
             echo "❌ index.html missing"
             exit 1
@@ -56,4 +55,5 @@ jobs:
           path: './dist'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

@@ -22,6 +22,7 @@ export const InputPhone = forwardRef<HTMLInputElement, PropsWithChildren<InputPh
             <Icon width="18" height="12" icon="flag-by" />
           </span>
           <InputMask
+            name="phone"
             ref={ref}
             mask="+375 99 999 99 99"
             {...filteredProps}

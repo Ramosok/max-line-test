@@ -6,6 +6,7 @@ import { Button } from 'src/shared/ui/Button';
 import { useForm, Controller, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registrationValidationSchema } from 'src/widgets/Form/validation';
+import { useRegister } from 'src/widgets/Form/hooks/useRegister';
 
 export interface FormData {
   phone: string;
@@ -13,6 +14,7 @@ export interface FormData {
   isAge: boolean;
   isBonusAccepted: boolean;
 }
+
 const resolver: Resolver<FormData> = yupResolver(
   registrationValidationSchema,
 ) as Resolver<FormData>;
@@ -22,6 +24,8 @@ export const Form: FC = () => {
     handleSubmit,
     control,
     register,
+    reset,
+    setError,
     formState: { errors, isValid },
   } = useForm<FormData>({
     defaultValues: {
@@ -35,18 +39,29 @@ export const Form: FC = () => {
     resolver,
   });
 
+  const { mutateAsync, isPending } = useRegister();
+
   const handleSubmitForm = (formData: FormData) => {
-    console.log(formData);
+    mutateAsync(formData)
+      .then(() => reset())
+      .catch((e) => {
+        setError('phone', { message: e?.message });
+      });
   };
 
   return (
-    <div className="flex h-full w-[580px] flex-col items-center justify-center bg-black_07 p-[100px]">
+    <div className="flex h-[45vh] w-full flex-col items-center justify-center self-end rounded-t-3xl bg-black_07 p-[50px] 768:h-full 768:w-[400px] 768:rounded-none 1024:w-[480px] 1024:p-[100px] 1280:w-[580px]">
       <h2 className="mb-4 w-full text-[22px] font-medium text-white">Регистрация</h2>
       <form autoComplete="off" onSubmit={handleSubmit(handleSubmitForm)}>
-        <InputPhone placeholder="+375" {...register('phone')} error={errors.phone?.message}>
+        <InputPhone
+          disabled={isPending}
+          placeholder="+375"
+          {...register('phone')}
+          error={errors.phone?.message}>
           Номер телефона
         </InputPhone>
         <InputPassword
+          disabled={isPending}
           placeholder="Придумайте пароль"
           error={errors.password?.message}
           {...register('password')}>
@@ -70,7 +85,7 @@ export const Form: FC = () => {
                 className="mx-0.5 underline"
                 target="_blank"
                 href="https://cdn.maxline.by/files/personal_data_ru.pdf">
-                «Политику конциденциальности»
+                «Политику конфиденциальности»
               </a>
             </Checkbox>
           )}
@@ -92,7 +107,7 @@ export const Form: FC = () => {
           )}
         />
 
-        <Button disabled={!isValid} className="mt-[22px]">
+        <Button isLoading={isPending} disabled={!isValid || isPending} className="mt-[22px]">
           регистрация
         </Button>
       </form>

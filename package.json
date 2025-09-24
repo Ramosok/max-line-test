@@ -13,7 +13,7 @@
     "check-build": "node -e \"const fs = require('fs'); console.log('Build check:', fs.existsSync('./dist/index.html') ? '✅ index.html exists' : '❌ index.html missing');\""
   },
   "dependencies": {
-    "@react-input/mask": "^1.2.3",
+    "@react-input/mask": "~1.2.3",
     "@tanstack/react-query": "~5.66.0",
     "axios": "~1.9.0",
     "clsx": "~2.1.1",
@@ -45,7 +45,7 @@
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-react-hooks": "~4.6.2",
     "eslint-plugin-react-refresh": "~0.4.19",
-    "gh-pages": "^6.3.0",
+    "gh-pages": "~6.3.0",
     "globals": "~15.15.0",
     "lint-staged": "~15.2.7",
     "postcss": "~8.5.2",
