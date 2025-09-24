@@ -54,7 +54,7 @@ export default defineConfig(() => {
     rollupOptions: {
       treeshake: true,
     },
-    base: '/max-line-test/',
+    base: './',
     minify: 'terser',
     build: {
       cssMinify: true,
