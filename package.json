@@ -1,9 +1,12 @@
 {
   "name": "max-line-test",
   "private": true,
+  "homepage": "https://ramosok.github.io/max-line-test",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -43,6 +46,7 @@
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-react-hooks": "~4.6.2",
     "eslint-plugin-react-refresh": "~0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "~15.15.0",
     "lint-staged": "~15.2.7",
     "postcss": "~8.5.2",
