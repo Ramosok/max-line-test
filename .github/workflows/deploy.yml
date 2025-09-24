@@ -31,11 +31,14 @@ jobs:
         run: |
           echo "=== Files in dist folder ===" 
           ls -la ./dist
-          echo "=== index.html exists? ==="
-          test -f ./dist/index.html && echo "✅ index.html found" || echo "❌ index.html missing"
+          echo "=== Checking index.html ==="
+          cat ./dist/index.html | grep -o 'src="[^"]*"' || echo "No src attributes found"
+          echo "=== JavaScript files ==="
+          find ./dist -name "*.js" | head -10
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true

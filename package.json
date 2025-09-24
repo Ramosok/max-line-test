@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ignore-pattern 'src/libs/react-easyrocket/**' --fix",
-    "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --ignore-pattern 'src/libs/react-easyrocket/**' --fix"
+    "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --ignore-pattern 'src/libs/react-easyrocket/**' --fix",
+    "check-build": "node -e \"const fs = require('fs'); console.log('Build check:', fs.existsSync('./dist/index.html') ? '✅ index.html exists' : '❌ index.html missing');\""
   },
   "dependencies": {
     "@react-input/mask": "^1.2.3",
