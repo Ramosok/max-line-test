@@ -5,10 +5,12 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
+      MTS_Sans: ['MTS Sans', 'sans-serif'],
     },
     backgroundImage: {
       MAIN_BG: 'url(/src/shared/assets/main-bg.png)',
       FLAME_BG: 'url(/src/shared/assets/flame.gif)',
+      BONUS_BG: 'url(/src/shared/assets/bonus-bg.webp)',
     },
     colors: {
       'primary-blue': 'var(--primary-blue)',
@@ -21,6 +23,8 @@ module.exports = {
       white: 'var(--white)',
       black_07: 'var(--black_07)',
       'grey-medium': 'var(--grey-medium)',
+      'purple-darkest': 'var(--purple-darkest)',
+      azure: 'var(--azure)',
     },
     extend: {
       fontSize: {},
@@ -28,11 +32,6 @@ module.exports = {
         inter: ['Inter'],
       },
 
-      lineHeight: {},
-      borderRadius: {},
-      borderWidth: {
-        1: '0.560661px',
-      },
       screens: {
         320: '320px',
         360: '360px',
@@ -47,13 +46,6 @@ module.exports = {
         1920: '1920px',
         2560: '2560px',
       },
-      backgroundSize: {},
-      dropShadow: {},
-      width: {},
-      height: {},
-      gridTemplateColumns: {},
-      animation: {},
-      keyframes: {},
     },
   },
 
