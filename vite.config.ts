@@ -50,6 +50,8 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
@@ -57,9 +59,9 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    minify: 'terser',
-    cssMinify: true,
-    assetsInlineLimit: 4096,
   },
   base: './',
+  server: {
+    port: 3000,
+  },
 });
