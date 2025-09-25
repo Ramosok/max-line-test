@@ -13,7 +13,7 @@ export const BonusBlock = () => {
           <p className="text-[39px] font-black text-azure 768:text-[78px]">ФРИСПИНОВ</p>
         </div>
       </div>
-      <p className="leading-0 -translate-y-7 font-MTS_Sans text-[25px] font-black text-white [text-shadow:0_4px_0_#000] 768:text-[50px]">
+      <p className="leading-0 -translate-y-2 font-MTS_Sans text-[25px] font-black text-white [text-shadow:0_4px_0_#000] 768:-translate-y-7 768:text-[50px]">
         ЗА РЕГИСТРАЦИЮ
       </p>
     </div>

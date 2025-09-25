@@ -8,7 +8,7 @@ export const ImagesBlock: FC = () => {
   return (
     <>
       <img
-        className="768:translate-x-0-translate-x-1/2 absolute bottom-[20%] left-1/2 z-[2] mt-2 aspect-[741/1075] w-[370px] max-w-[741px] object-contain 768:bottom-0 768:left-10 768:w-full"
+        className="absolute bottom-[20%] left-1/2 z-[2] mt-2 aspect-[741/1075] w-[370px] max-w-[741px] -translate-x-1/2 object-contain 768:bottom-0 768:left-10 768:w-full 768:translate-x-0"
         alt="zeus"
         src={zeus}
       />
@@ -20,7 +20,7 @@ export const ImagesBlock: FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_4_512)">
-          <ellipse cx="429.638" cy="936" rx="417.638" ry="834" fill="#AB4AFF" fill-opacity="0.78" />
+          <ellipse cx="429.638" cy="936" rx="417.638" ry="834" fill="#AB4AFF" fillOpacity="0.78" />
         </g>
         <defs>
           <filter
@@ -30,8 +30,8 @@ export const ImagesBlock: FC = () => {
             width="1037.98"
             height="1870.71"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="50.6771" result="effect1_foregroundBlur_4_512" />
           </filter>
@@ -47,7 +47,7 @@ export const ImagesBlock: FC = () => {
         loading="lazy"
         src={azure}
         alt="azure"
-        className="absolute left-0 top-[32%] z-[1] h-[650px] w-[230px] 768:w-[560px]"
+        className="absolute left-0 top-[32%] z-[1] h-[600px] w-[230px] 768:w-[560px]"
       />
       <img
         loading="lazy"
@@ -63,14 +63,7 @@ export const ImagesBlock: FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_4_513)">
-          <ellipse
-            cx="519.638"
-            cy="-470"
-            rx="417.638"
-            ry="834"
-            fill="#714AFF"
-            fill-opacity="0.78"
-          />
+          <ellipse cx="519.638" cy="-470" rx="417.638" ry="834" fill="#714AFF" fillOpacity="0.78" />
         </g>
         <defs>
           <filter
@@ -80,8 +73,8 @@ export const ImagesBlock: FC = () => {
             width="1037.98"
             height="1870.71"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="50.6771" result="effect1_foregroundBlur_4_513" />
           </filter>
