@@ -50,7 +50,7 @@ export const Form: FC = () => {
   };
 
   return (
-    <article className="z-[3] flex h-[45vh] min-h-[426px] w-full min-w-[400px] flex-col items-center self-end rounded-t-3xl bg-purple-darkest px-[50px] pt-[30px] contain-layout contain-paint 768:h-full 768:w-[400px] 768:justify-center 768:rounded-none 768:bg-black_07 768:p-[50px] 768:pt-0 1024:w-[480px] 1024:p-[60px] 1280:w-[580px] 1280:p-[100px]">
+    <article className="z-[3] flex h-[45vh] min-h-[426px] w-full min-w-full flex-col items-center self-end rounded-t-3xl bg-purple-darkest px-[50px] pt-[30px] contain-layout contain-paint 768:h-full 768:w-[400px] 768:min-w-[400px] 768:justify-center 768:rounded-none 768:bg-black_07 768:p-[50px] 768:pt-0 1024:w-[480px] 1024:p-[60px] 1280:w-[580px] 1280:p-[100px]">
       <h2 className="mb-4 w-full text-[22px] font-medium text-white">Регистрация</h2>
       <form autoComplete="off" onSubmit={handleSubmit(handleSubmitForm)}>
         <InputPhone
