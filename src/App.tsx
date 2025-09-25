@@ -3,9 +3,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { Wrapper } from 'src/components/Wrapper';
 import { Form } from 'src/widgets/Form';
-import zeus from 'src/shared/assets/zeus.webp';
 import { Title } from 'src/components/Title';
 import { BonusBlock } from 'src/components/BonusBlock';
+import { ImagesBlock } from 'src/components/ImagesBlock';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,16 +17,16 @@ export const queryClient = new QueryClient({
 });
 
 export const App: FC = () => {
+  const isMinHeight = window.matchMedia('(max-height: 669px)').matches;
+
   return (
     <QueryClientProvider client={queryClient}>
       <Wrapper>
-        <BonusBlock />
-
-        <img
-          className="absolute bottom-0 left-12 aspect-[741/1075] w-full max-w-[741px] object-contain"
-          alt="zeus"
-          src={zeus}
-        />
+        <div className="flex h-min flex-col items-center px-5">
+          <Title />
+          <BonusBlock />
+        </div>
+        {!isMinHeight && <ImagesBlock />}
         <Form />
       </Wrapper>
     </QueryClientProvider>

@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 export const Title: FC = () => {
   return (
-    <div className="mt-20 w-full text-center">
+    <div className="ml-0 mt-9 w-full text-center 768:ml-[100px] 768:mt-20">
       <svg
-        className="mr-1.5 inline-block w-fit"
+        className="mr-1.5 inline-block h-[21px] w-fit 768:h-full"
         width="220"
         height="41"
         viewBox="0 0 220 41"
@@ -33,7 +33,7 @@ export const Title: FC = () => {
         />
       </svg>
       <svg
-        className="inline-block w-fit"
+        className="inline-block h-[21px] w-fit 768:h-full"
         width="108"
         height="39"
         viewBox="0 0 108 39"

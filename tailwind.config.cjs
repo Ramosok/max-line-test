@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
-      MTS_Sans: ['MTS Sans', 'sans-serif'],
+      MTS_Sans: ['MTSSans', 'sans-serif'],
     },
     backgroundImage: {
       MAIN_BG: 'url(/src/shared/assets/main-bg.png)',
@@ -25,6 +25,7 @@ module.exports = {
       'grey-medium': 'var(--grey-medium)',
       'purple-darkest': 'var(--purple-darkest)',
       azure: 'var(--azure)',
+      black: 'var(--black)',
     },
     extend: {
       fontSize: {},
