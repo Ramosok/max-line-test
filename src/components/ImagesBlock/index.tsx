@@ -47,7 +47,7 @@ export const ImagesBlock: FC = () => {
         loading="lazy"
         src={azure}
         alt="azure"
-        className="absolute left-0 top-[32%] z-[1] w-[230px] 768:w-[560px]"
+        className="absolute left-0 top-[32%] z-[1] h-[650px] w-[230px] 768:w-[560px]"
       />
       <img
         loading="lazy"
