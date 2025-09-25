@@ -16,7 +16,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={clsx(
           !disabled && 'hover:bg-green-light active:bg-green-muted',
           className,
-          'flex w-full items-center justify-center rounded-md bg-green p-3.5 text-sm font-medium uppercase leading-4 text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50',
+          'flex w-full items-center justify-center rounded-md bg-green p-3.5 text-sm font-medium uppercase leading-4 text-white transition-colors disabled:cursor-not-allowed disabled:bg-green-muted',
           isLoading && 'cursor-wait',
         )}
         {...props}

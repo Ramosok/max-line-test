@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { Wrapper } from 'src/components/Wrapper';
+import { Wrapper } from 'src/features/Wrapper';
 import { Form } from 'src/widgets/Form';
-import { Title } from 'src/components/Title';
-import { BonusBlock } from 'src/components/BonusBlock';
-import { ImagesBlock } from 'src/components/ImagesBlock';
+import { Title } from 'src/features/Title';
+import { BonusBlock } from 'src/features/BonusBlock';
+import { ImagesBlock } from 'src/features/ImagesBlock';
 
 export const queryClient = new QueryClient({
   defaultOptions: {

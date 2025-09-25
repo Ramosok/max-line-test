@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 export const Title: FC = () => {
   return (
-    <div className="ml-0 mt-9 w-full text-center 768:ml-[100px] 768:mt-20">
+    <div className="relative z-[3] ml-0 mt-9 w-full text-center 768:ml-[300px] 768:mt-20 1024:ml-[100px]">
       <svg
         className="mr-1.5 inline-block h-[21px] w-fit 768:h-full"
         width="220"

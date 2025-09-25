@@ -53,11 +53,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
 input {
   border: none;
   padding: 0;
@@ -86,15 +81,7 @@ h1,
 h2,
 h3,
 h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
+p {
   margin: 0;
 }
 
@@ -110,11 +97,6 @@ body,
 #root {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-}
-
-ul[class],
-ol[class] {
-  list-style: none;
 }
 
 a:not([class]) {

@@ -2,7 +2,7 @@ import freespinAmount from 'src/shared/assets/200.webp';
 
 export const BonusBlock = () => {
   return (
-    <div className="relative left-0 top-0 z-[3] flex h-auto flex-col items-center justify-center contain-layout contain-paint 768:left-12 768:top-[20vh]">
+    <div className="968:scale-75 relative left-0 top-0 z-[3] flex h-auto scale-100 flex-col items-center justify-center contain-layout contain-paint 768:left-32 768:top-[20vh] 768:scale-[60%] 1024:left-12 1024:scale-100">
       <div className="mt-[35px] flex h-[170px] w-[420px] items-center justify-center bg-FLAME_BG bg-cover bg-center bg-no-repeat pl-1.5 768:h-[340px] 768:w-[820px]">
         <img
           className="absolute top-[27px] w-[280px] object-contain object-center 768:w-[545px]"
