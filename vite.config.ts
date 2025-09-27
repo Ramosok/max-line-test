@@ -5,6 +5,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import sitemap from 'vite-plugin-sitemap';
 import svgr from 'vite-plugin-svgr';
+import { createHtmlPlugin } from 'vite-plugin-html';
 import webfontDownload from 'vite-plugin-webfont-dl';
 import preload from 'vite-plugin-preload';
 
@@ -19,6 +20,16 @@ export default defineConfig({
       svgrOptions: {
         icon: true,
         dimensions: false,
+      },
+    }),
+    createHtmlPlugin({
+      inject: {
+        data: {
+          injectPreload: `
+            <link rel="preload" href="/assets/zeus.webp" as="image" type="image/webp">
+            <link rel="preload" href="/assets/200.webp" as="image" type="image/webp">
+          `,
+        },
       },
     }),
     sitemap({

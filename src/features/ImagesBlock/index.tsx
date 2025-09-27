@@ -8,9 +8,12 @@ export const ImagesBlock: FC = () => {
   return (
     <>
       <img
+        width="741"
+        height="1045"
         className="absolute bottom-[20%] left-1/2 z-[2] mt-2 aspect-[741/1075] w-[370px] max-w-[741px] -translate-x-1/2 object-contain 768:bottom-0 768:left-10 768:w-full 768:translate-x-0"
         alt="zeus"
         src={zeus}
+        loading="eager"
       />
       <svg
         className="absolute bottom-0 left-0 z-[1] hidden 768:block"
@@ -39,18 +42,21 @@ export const ImagesBlock: FC = () => {
       </svg>
       <img
         loading="lazy"
+        decoding="async"
         src={diamond}
         alt="diamond"
         className="absolute bottom-0 left-[45%] hidden w-[230px] 768:block 768:w-[560px]"
       />
       <img
         loading="lazy"
+        decoding="async"
         src={azure}
         alt="azure"
         className="absolute left-0 top-[25%] h-[300px] w-[230px] 768:top-[32%] 768:h-[600px] 768:w-[560px]"
       />
       <img
         loading="lazy"
+        decoding="async"
         src={gold}
         alt="gold"
         className="absolute -right-[107px] top-[42%] z-20 w-[230px] 768:right-[21%] 768:top-[3%] 768:z-[1] 768:w-[360px]"
