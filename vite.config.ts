@@ -15,7 +15,12 @@ export default defineConfig({
       includeCss: true,
     }),
     react(),
-    svgr(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+        dimensions: false,
+      },
+    }),
     sitemap({
       hostname: 'https://onedun.com/',
       basePath: '',
@@ -39,10 +44,11 @@ export default defineConfig({
       algorithm: 'gzip',
       ext: '.gz',
       threshold: 10240,
+      compressionOptions: { level: 11 },
     }),
     ViteImageOptimizer({
       svg: {
-        plugins: [],
+        plugins: ['preset-default'],
       },
       png: {
         quality: 70,
@@ -65,14 +71,31 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    minify: 'esbuild',
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]',
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) {
+            return 'assets/[name]-[hash][extname]';
+          }
+          const ext = assetInfo.name.split('.').pop()?.toLowerCase();
+
+          if (ext && /png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return 'assets/images/[name]-[hash][extname]';
+          }
+          if (ext && /woff2?|eot|ttf|otf/i.test(ext)) {
+            return 'assets/fonts/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
       },
     },
   },
+
   base: './',
   server: {
     port: 3000,
